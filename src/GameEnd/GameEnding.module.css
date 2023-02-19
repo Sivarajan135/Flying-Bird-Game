@@ -1,29 +1,32 @@
-.scoreBtn{
-    background-color: rgba(0, 204, 255 , 0.7);
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 28px;
-    top: 10px;
-}
-.restartBtn
+.GameEndingContainer
 {
-    display: flex;
-    flex-direction: column;   
-    background-color: rgba(0, 204, 255,0.7);
     position: absolute;
-    left: 35px;
-    top: 60px;
-}
-.restartBtn :active
-{
-    transform: translateY(5px);
+    top: 270px;
+    left: 590px;
+    height: 250px;
+    width: 300px;
+    background-color: rgb(244, 149, 190);
+    box-shadow: 5px 3px 8px 3px rgba(0, 0, 0, 0.5);
 }
 .buttonContainer
 {
-    width: 150px;
-    height: 140px;
-    background-color: rgba(223, 24, 54, 0.7);
-    position: relative;
-    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.buttonContainer>button
+{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+button:hover
+{
+  opacity: 0.6;
+  transition: 0.3s;
+  background-color: whitesmoke;
+  color: black;
+}
+h2
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(220, 206, 187);
 }

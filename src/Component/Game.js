@@ -11,6 +11,8 @@ function Game() {
   const gameWidth = 600
   const obstacleGap = 150
 
+  //ALL useStates
+
 
   const [birdPosition , setBirdPosition] = useState(230)
   const [startGame , setStartGame] = useState(false)
@@ -18,6 +20,8 @@ function Game() {
   const [upObstacle , setUpObstacle] = useState(100);
   const [obstaclePosition , setObstaclePosition] = useState(0)
   const [display , setDisplay] = useState("none")
+
+  // useEffect for set the  birdPosition
 
   useEffect(() => {
      if(startGame && birdPosition < gameHeight-birdHeight)
@@ -32,6 +36,9 @@ function Game() {
      }
   } ,[startGame , birdPosition])
 
+
+// useEffect for set the Obstacle Position
+
   const generateRandom = num => {
      return Math.random()*num;
   }
@@ -42,7 +49,7 @@ function Game() {
     {
        const interval = setInterval(() => {
            setObstaclePosition(obstaclePosition => obstaclePosition + 4)
-       }, 18)
+       }, 16)
 
        return () => clearInterval(interval)
     }
@@ -61,13 +68,16 @@ function Game() {
 
  } ,[startGame , obstaclePosition])
 
+
+ // useEffect for Game Stopping when bird hit the obstacles
+
     const upObstacleCollide = birdPosition < upObstacle
     const downObstacleCollide = birdPosition > (upObstacle+obstacleGap-birdHeight)
 
 
  useEffect(() => {
 
-    if(obstaclePosition > 435 && (upObstacleCollide || downObstacleCollide))
+    if(obstaclePosition > 472 && (upObstacleCollide || downObstacleCollide))
     {
        setStartGame(false);
        setObstaclePosition(obstaclePosition)
@@ -75,7 +85,7 @@ function Game() {
     }
  } , [ startGame , obstaclePosition])
  
-
+// upArrow for bird position change
     
   const upArrow = () => {
     if(birdPosition > birdHeight && birdPosition < gameHeight - birdHeight && startGame)
@@ -83,6 +93,8 @@ function Game() {
     setBirdPosition(birdPosition-50);
     }
   }
+
+//   Callback Method for Game Ending
 
   const getValue  = (item , bird , obs , newScore) => {
      setDisplay(item)
@@ -92,15 +104,23 @@ function Game() {
   }
 
   return (
-    <div>
+    <div className={styles.Container}>
+      
+      {/* Game Container */}
+
         <div className={styles.mainContainer}>
-            <img src={birdImage} style={{position :"absolute",width : "35px" , height : "35px" , top : `${birdPosition}px` ,left : 50}}></img>
+            <img src={birdImage} style={{position :"absolute",width : "35px" , height : "35px" , top : `${birdPosition}px` ,left : 10}}></img>
             <div style={{width : "80px" , height : `${upObstacle}px` , backgroundColor :"rgba(0, 0, 0, 0.5)", position: "absolute" , right: `${obstaclePosition}px`, top: 0}}></div>
             <div style={{width : "80px" , height : `${gameHeight-obstacleGap-upObstacle}px` , backgroundColor :"rgba(0, 0, 0, 0.5)", position: "absolute" , right: `${obstaclePosition}px`, top : upObstacle + obstacleGap}}></div>
         </div>
+
+       {/* Buttons for Game */}
+
         <button className={styles.startButton} onClick={() => setStartGame(true)}>Start Game</button>
         <button className={styles.scoreButton}>Score - {score}</button>
         <button onClick = {upArrow}className={styles.upButton}>Up</button><br /><br /><br /><br />
+
+        {/* GameEnding Component */}
 
         <div className={styles.gameEnd} style = {{display : display}}><GameEnding score = {score} getValue = {getValue}/></div>
     </div>

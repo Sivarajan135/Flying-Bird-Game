@@ -8,7 +8,7 @@ function GameEnding(props) {
   }
 
   return (
-    <div>
+    <div className={styles.GameEndingContainer}>
       <h2>Oops...!! Game Over</h2>
       <div className={styles.buttonContainer}>
            <button className={styles.scoreBtn}>Score - {props.score}</button>

@@ -1,30 +1,41 @@
+.Container
+{
+   height: 100vh;
+   background-color: rgba(229, 160, 216, 0.764);
+   margin-top: 0;
+   position: relative;
+}
 .mainContainer
 {
     background-image: url("C:\Users\sivar\Downloads\NaturePic.jpg");
     height : 500px;
     width: 600px;
-    margin-top: 100px;
-    margin-left: 400px;
-    position: relative;
+    position:absolute;
+    top: 20%;
+    left: 30%;
     overflow: hidden;
+    box-shadow: 3px 3px 8px 3px rgb(225, 11, 150);
 }
 
 .startButton
 {
     position: absolute;
     left: 700px;
+    top: 650px;
 }
 
 .scoreButton
 {
     position: absolute;
     left: 600px;
+    top: 650px;
 }
 
 .upButton
 {
     position: absolute;
     left: 810px;
+    top: 650px;
 }
 
 
@@ -41,14 +52,4 @@ button{
 button:active
 {
     transform: translateY(5px);
-}
-
-.gameEnd
-{
-    height: 270px;
-    width: 270px;
-    background-color: rgba(79, 76, 14, 0.5);
-    position: absolute;
-    top: 33%;
-    left: 37%;
 }
