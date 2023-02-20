@@ -118,7 +118,7 @@ function Game() {
 
         <button className={styles.startButton} onClick={() => setStartGame(true)}>Start Game</button>
         <button className={styles.scoreButton}>Score - {score}</button>
-        <button onClick = {upArrow}className={styles.upButton}>Up</button><br /><br /><br /><br />
+        <button onClick = {upArrow}className={styles.upButton}>Click to Fly</button><br /><br /><br /><br />
 
         {/* GameEnding Component */}
 
