@@ -83,7 +83,7 @@ function Game() {
        setObstaclePosition(obstaclePosition)
        setDisplay("")
     }
- } , [ startGame , obstaclePosition])
+ } , [ startGame , obstaclePosition , upObstacleCollide , downObstacleCollide])
  
 // upArrow for bird position change
     
@@ -109,7 +109,7 @@ function Game() {
       {/* Game Container */}
 
         <div className={styles.mainContainer}>
-            <img src={birdImage} style={{position :"absolute",width : "35px" , height : "35px" , top : `${birdPosition}px` ,left : 10}}></img>
+            <img src={birdImage} style={{position :"absolute",width : "35px" , height : "35px" , top : `${birdPosition}px` ,left : 10}} alt="alt"></img>
             <div style={{width : "80px" , height : `${upObstacle}px` , backgroundColor :"rgba(0, 0, 0, 0.5)", position: "absolute" , right: `${obstaclePosition}px`, top: 0}}></div>
             <div style={{width : "80px" , height : `${gameHeight-obstacleGap-upObstacle}px` , backgroundColor :"rgba(0, 0, 0, 0.5)", position: "absolute" , right: `${obstaclePosition}px`, top : upObstacle + obstacleGap}}></div>
         </div>

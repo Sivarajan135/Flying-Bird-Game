@@ -7,7 +7,8 @@
 }
 .mainContainer
 {
-    background-image: url("C:\Users\sivar\Downloads\NaturePic.jpg");
+    background-image: url("../Assets/NaturePic.jpg");
+    background-size: cover;
     height : 500px;
     width: 600px;
     position:absolute;
