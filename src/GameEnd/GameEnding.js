@@ -12,7 +12,7 @@ function GameEnding(props) {
       <h2>Oops...!! Game Over</h2>
       <div className={styles.buttonContainer}>
            <button className={styles.scoreBtn}>Score - {props.score}</button>
-           <button className={styles.restartBtn} onClick = {() => value("none" , 230 , 0 , 0)}>Restart</button>
+           <button className={styles.restartBtn} onClick = {() => value("none" , 230 , 0 , 0)}>Exit</button>
       </div>
     </div>
   )
